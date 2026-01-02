@@ -1,0 +1,51 @@
+:root {
+  /* Fruit-forward, warm & playful theme */
+  --primary-color: #6BBF6A; /* friendly green */
+  --secondary-color: #FFF6EA; /* soft warm background */
+  --accent-orange: #FF7A3D; /* appetite-boosting orange */
+  --accent-red: #FF5252; /* accents for urgency */
+  --accent-yellow: #FFD166; /* sunny, appetizing */
+  --dark-text: #1F2121;
+  --muted-text: #6B6B6B;
+  --light-gray: #EDEDED;
+  --border-radius: 14px;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--dark-text);
+}
+
+body {
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 1; }
+  50% { transform: translateY(-30px) translateX(20px); opacity: 0.8; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
