@@ -8,6 +8,7 @@ import OrdersScreen from './components/OrdersScreen'
 import GPSScreen from './components/GPSScreen'
 import ProfileScreen from './components/ProfileScreen'
 import BottomNav from './components/BottomNav'
+import ResponsiveShell from './components/ResponsiveShell'
 import { AppState, Order } from './types'
 import { mockOrders } from './utils/mockData'
 
@@ -39,6 +40,10 @@ function App() {
     }, 5000)
     return () => clearTimeout(timer)
   }, [appState.isLoggedIn])
+
+  // Quick preview switch: add `?preview=rshell` to the URL to render the ResponsiveShell
+  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams('')
+  const previewShell = urlParams.get('preview') === 'rshell'
 
   const handleLogin = (email: string, password: string) => {
     if (!email || !password) {
@@ -203,6 +208,10 @@ function App() {
 
   if (showSplash) {
     return <SplashScreen />
+  }
+
+  if (previewShell) {
+    return <ResponsiveShell />
   }
 
   if (!appState.isLoggedIn) {

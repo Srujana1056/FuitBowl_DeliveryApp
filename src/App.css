@@ -10,9 +10,9 @@
 .mobile-shell {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* move widget to the top */
   justify-content: center;
-  padding: 24px;
+  padding: 12px 24px 24px 24px; /* smaller top padding so widget sits near top */
   background: linear-gradient(180deg, rgba(255,250,245,0.6), rgba(255,250,245,0.95));
 }
 
@@ -25,6 +25,7 @@
   background: var(--secondary-color);
   display: flex;
   flex-direction: column;
+  position: relative; /* make children absolute positioning relative to the widget */
 }
 
 /* Header */
